@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // test();
+      // function test() {
+      //   console.log("function called");
+      //   return "Hello";
+      // }
+
+      //   function test(a, b = 2) {
+      //     console.log(a + b);
+      //   }
+
+      //   test(3, 7);
+
+      // let test = (a, b) => {
+      //   return "Hello";
+      // };
+
+      // let result = test(2, 4);
+      // console.log(result);
+
+      // let test = (a) => {
+      //   if (a % 2 == 0) {
+      //     return "even";
+      //   } else {
+      //     return "odd";
+      //   }
+      // };
+      // let res = test(3);
+      // console.log(res);
+
+      let fun = (a) => {
+        let count = 0;
+        let b = a;
+        let c = 0;
+        let d = a;
+        while (a > 0) {
+          count += 1;
+          a = a / 10;
+        }
+
+        while (b > 0) {
+          v = b % 10;
+          c = c + v * Math.pow(10, count - 1);
+          count -= 1;
+          b = b / 10;
+        }
+
+        if (d == c) {
+          return "palindrom";
+        } else {
+          return "not palindrom";
+        }
+      };
+
+      let result = fun(153);
+      console.log(result);
+    </script>
+  </body>
+</html>

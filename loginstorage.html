@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <label for="">USERNAME : </label> <input type="text" name="" id="uname"><br><br>
+    <Label>PASSWORD : </Label><input type="password" name="" id="psw"><br><br>
+    <label for=""><button onclick="check()">LOGIN</button></label>
+    <p id="lo"></p>
+
+    <script>
+        let arr = []
+        let check = () => {
+            name = 'khush123'
+            psw = '213'
+            uname = document.getElementById('uname').value
+            pass = document.getElementById('psw').value
+            lo = document.getElementById('lo')
+            if(uname==name && pass==psw){
+                lo.innerText = 'you logged in successfully'
+                arr.push({
+                    id:uname,
+                    pass : pass,
+                })
+                localStorage.setItem('data',JSON.stringify(arr))
+            }
+            else{
+                lo.innerText = 'Incorrect Password or Username'
+            }
+        }
+    </script>
+</body>
+</html>

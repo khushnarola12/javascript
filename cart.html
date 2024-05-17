@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div id="body" style="display: flex; height: auto; width: 100%; ; justify-content: center; overflow: hidden;">
+
+    </div>
+    <div id="showcart" style="margin-top: 20px;"><center><a href="#" onclick="show()"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center white:bg-blue-600 white:hover:bg-blue-700 white:focus:ring-blue-800  ">Show Cart</a></div></center>
+    <div id="cart">
+
+    </div>
+    <script>
+
+        let products = [{
+            name : "Apple iPhone 14 Plus (128 GB) - Blue",
+            price : "$1000",
+            img : "https://m.media-amazon.com/images/I/61BGE6iu4AL._SX679_.jpg",
+            count : 0,
+            },
+
+            {
+                name : "Apple iPhone 13 (358 GB) - Blue",
+                price : "$1200",
+                img : "https://m.media-amazon.com/images/I/61B0+qQriPL._SX679_.jpg",
+                count : 0,
+            },
+
+            {
+                name : "Apple Watch Ultra [GPS + Cellular 49 mm] Smart ",
+                price : "$1400",
+                img : "https://m.media-amazon.com/images/I/810JR81LIsL._SX679_.jpg",
+                count : 0,
+            },
+
+            {
+                name : "Samsung Galaxy S24 Ultra 5G AI Smartphone ",
+                price : "$1750",
+                img : "https://m.media-amazon.com/images/I/81lek2iav1L._SX679_.jpg",
+                count : 0,
+            },
+            {
+                name : "Apple iPhone 15 (358 GB) - Blue",
+                price : "$1400",
+                img : "https://m.media-amazon.com/images/I/61B0+qQriPL._SX679_.jpg",
+                count : 0,
+            },
+
+            
+        ]
+
+        let body = document.getElementById('body')
+
+        products.map((val,index) =>{
+            let div = document.createElement('div')
+            div.innerHTML = `
+            <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow primary:bg-gray-800 primary:border-gray-700">
+        <a href="#">
+            <img id="image" class="p-8 rounded-t-lg" src="${val.img}" alt="product image" />
+        </a>
+        <div class="px-5 pb-5">
+            <a href="#">
+                <h5 id="name" class="text-xl font-semibold tracking-tight text-gray-900 bg-primary:text-primary">${val.name}</h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+                <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                </div>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">4.0</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <span id="price" class="text-3xl font-bold text-gray-900 white:text-dark">${val.price}</span>
+                <a href="#" onclick="addtocart(${index})" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center white:bg-blue-600 white:hover:bg-blue-700 white:focus:ring-blue-800">Add to cart</a>
+            </div>
+        </div>
+    </div>
+            `;
+        body.appendChild(div)
+
+})
+    let count = 0
+    let cart = []
+    products.push({
+        count:count
+        })
+   let addtocart = (index) => {
+    
+    console.log(index);
+
+    let data = products[index]
+    console.log(data);
+     
+   }
+
+
+
+    </script>
+
+</body>
+</html>

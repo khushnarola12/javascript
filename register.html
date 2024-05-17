@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">NAME : </label
+    ><input type="text" name="" id="name" /><br /><br />
+    <label for="">MOBILE NO : </label
+    ><input type="number" name="" id="num" /><br /><br />
+    <button onclick="check()">REGISTER</button>
+
+    <script>
+      let arr = JSON.parse(localStorage.getItem("data")) || [];
+      let count = 0;
+      let check = () => {
+        let name = document.getElementById("name").value;
+        let no = document.getElementById("num").value;
+        // count = count + 1;
+
+        arr.push({
+          name: name,
+          num: no,
+        });
+        localStorage.setItem("data", JSON.stringify(arr));
+        console.log(name);
+      };
+    </script>
+  </body>
+</html>

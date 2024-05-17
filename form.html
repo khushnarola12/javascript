@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" onsubmit="data()" method="get">
+      <label for="">NAME :</label>
+      <input type="text" name="" id="name"  required/><br /><br />
+      <label for="">Email :</label
+      ><input type="email" name="" id="email" required/><br /><br />
+      <label for="">Age :</label
+      ><input type="text" name="" id="age" required/><br /><br />
+      <label for="">Gender : </label
+      ><input type="radio" name="Gender" id="male"  required/>Male
+      <input type="radio" name="Gender" id="female" required/>Female <br /><br/>
+      <input type="submit" name="" id="button" />
+    </form>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Gender</td>
+          <td>Age</td>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      let data = () => {
+        let gender = "";
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let age = document.getElementById("age").value;
+
+        let male = document.getElementById("male");
+        let female = document.getElementById("female");
+        
+        if (male.checked) {
+          gender = "Male";
+        } else if (female.checked) {
+          gender = "Female";
+        } 
+
+        let arr = [];
+        arr.push({
+          aname: name,
+          aemail: email,
+          agender: gender,
+          aage: age,
+        });
+
+        let tbody = document.getElementById("tbody");
+        arr.map((val, index) => {
+          let tr = document.createElement("tr");
+          tr.innerHTML = `
+                    <td>${val.aname}</td>
+                    <td>${val.aemail}</td>
+                    <td>${val.aage}</td>
+                    <td>${val.agender}</td>
+        `;
+
+          tbody.appendChild(tr);
+        });
+      };
+    </script>
+  </body>
+</html>

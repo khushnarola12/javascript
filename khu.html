@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // localStorage.clear()
+        let arr = [1, 2, 3, 5];
+        let arr1 = ['khush','narola','ka','fd']
+        localStorage.setItem(JSON.stringify(arr1), JSON.stringify(arr));
+        // localStorage.setItem("name", JSON.stringify(arr));
+         // console.log(localStorage);
+
+      // localStorage.setItem("data", "khush");
+
+      let item = localStorage.getItem("data");
+      console.log(item);
+
+      // localStorage.removeItem("data");
+
+      // localStorage.clear();
+    </script>
+  </body>
+</html>

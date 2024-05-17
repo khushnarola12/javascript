@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+         <label for="">Email : </label>   <input type="email" name="username" id="email"> <BR></BR>
+         <LAbel>PASSWORD : </LAbel> <input type="password" name="upass" id="upass"><br><br>
+         <button onclick="check()">LOGIN</button>
+
+
+
+
+
+    <script>
+        let check = () => {
+            let inmail = document.getElementById('email').value;
+            let inpass = document.getElementById('upass').value;
+
+            let mail = "khushnarola08@gmail.com";
+            let pass = "1234";
+
+            let success = document.createElement("h2");
+            success.innerText = "you logged in successfully";
+            success.style.color =  "green";
+            
+
+            let fail = document.createElement("h2");
+            fail.innerText = "Invalid Email/Password";
+            fail.style.color =  "red";
+
+         
+            if(inmail==mail && inpass==pass)
+            {
+                document.body.appendChild(success)
+            }
+            else{
+                document.body.appendChild(fail)
+            }
+
+             }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" onsubmit="getdata()" method="get">
+      <label for="">NAME : </label>
+      <input type="text" name="" id="name" /><br /><br />
+      <label for="">Email : </label>
+      <input type="email" name="" id="email" /><br /><br />
+      <label for="">MOBILE NO :</label>
+      <input type="number" name="" id="number" /><br /><br />
+      <label for="">Age : </label><input type="text" name="" id="age" />
+      <input type="submit" name="submit" id="" />
+    </form>
+
+    <script>
+      let data = 0;
+      let getdata = () => {
+        let name = document.getElementById("name").value;
+        let gmail = document.getElementById("email").value;
+        let Number = document.getElementById("number").value;
+        let uage = document.getElementById("age").value;
+        let arr = [];
+        arr.push({
+          name: name,
+          mail: gmail,
+          num: Number,
+          age: uage,
+        });
+
+        data = data + 1;
+        localStorage.setItem(JSON.stringify(data), JSON.stringify(arr));
+      };
+    </script>
+  </body>
+</html>

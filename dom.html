@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="username" id="name" />
+
+    <button onclick="view()">search</button><br /><br />
+
+    <table border="1" cellspacing="0" cellpadding="10   ">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+          <td>age</td>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      let arr = [
+        {
+          name: "garvit",
+          age: 18,
+          email: "garvit@gmail.com",
+          image:"https://m.media-amazon.com/images/I/71jsEFJtRRL._SL1500_.jpg"
+        },
+        {
+          name: "user",
+          age: 18,
+          email: "user@gmail.com",
+        },
+        {
+          name: "khush",
+          age: 18,
+          email: "khush@gmail.com",
+        },
+        {
+          name: "demo",
+          age: 18,
+          email: "khush@gmail.com",
+        },
+        {
+          name: "garvit",
+          age: 18,
+          email: "garvit@gmail.com",
+          image:"https://m.media-amazon.com/images/I/71jsEFJtRRL._SL1500_.jpg"
+        },
+        {
+          name: "garvit",
+          age: 18,
+          email: "garvit@gmail.com",
+          image:"https://m.media-amazon.com/images/I/71jsEFJtRRL._SL1500_.jpg"
+        },
+        
+
+      ];
+
+      //   let view = () => {
+      //     let username = document.getElementById("name").value;
+
+      //     let data = {
+      //       name: username,
+      //     };
+
+      //     console.log(data);
+      //   };
+
+      let tbody = document.getElementById("tbody");
+
+      arr.map((val, index) => {
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+                    <td>${val.name}</td>
+                    <td>${val.email}</td>
+                    <td>${val.age}</td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    </script>
+  </body>
+</html>
